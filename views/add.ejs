@@ -1,0 +1,96 @@
+<%- include("partials/header") -%>
+
+
+    <!-- Add Page Header -->
+    <section class="add">
+        <div class="add-container">
+            <div class="add-text">
+                <h2>Add you own recipe so others can enjoy it as well!</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add form -->
+    <section>
+        <form action="/add" method="post" class="add-form"  onkeydown="return event.key != 'Enter';">
+            <div class="add-top-container">
+                <div class="add-info-container">
+                    <div class="input-container">
+                        <label>Name</label>
+                        <input type="text" name="recipeName" placeholder="Enter the recipe name" required>
+                    </div>
+                    <div class="input-container">
+                        <label>Description</label>
+                        <textarea name="recipeDesc" rows="2" cols="10" placeholder="Enter the recipe description" required></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label>Image URL</label>
+                        <input type="url" name="imageUrl" placeholder="Enter image URL" required>
+                    </div>
+                    <div class="input-container">
+                        <label>Preparation time</label>
+                        <input type="number" name="prepTime" placeholder="Enter preparation time in minutes"  min="0" required>
+                    </div>
+                    <div class="input-container">
+                        <label>Cooking time</label>
+                        <input type="number" name="cookTime" placeholder="Enter  cooking time in minutes"  min="0" required>
+                    </div>
+                    <div class="input-container">
+                        <label>No of servings</label>
+                        <input type="number" name="noOfServings" placeholder="Enter number of servings"  min="0" required>
+                    </div>
+                    <div class="input-container">     
+                        <label>Tags</label>
+                        <input type="text" name="tags" placeholder="Enter tags separated with commas" required>
+                    </div>
+                </div>
+            
+            <div class="add-ingredients-container">
+                <div class="ingredientsList" id="ingredientsList">
+                    <label>Ingredients list</label>
+                    <input type="text" name="newIngredient" placeholder="Add ingredient">
+                    <input type="text" name="newIngredient" placeholder="Add ingredient">
+                    <input type="text" name="newIngredient" placeholder="Add ingredient">
+                </div>
+                <div id="addIngredient">Add one more</div>
+                <!-- Add more ingredients button functionality -->
+                <script>
+                    const addIngredientBtn = document.getElementById("addIngredient");
+                    const ingredientsList = document.getElementById("ingredientsList");
+                    addIngredientBtn.addEventListener('click', function(){
+                        const newIngredient = document.createElement("input");
+                        newIngredient.setAttribute('type', "text");
+                        newIngredient.setAttribute('name', "newIngredient");
+                        newIngredient.setAttribute('placeholder', "Add ingredient");
+                        ingredientsList.appendChild(newIngredient);
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="add-instructions-container">
+            <div class="instructionsList" id="instructionsList">
+                <label>Instructions</label>
+                <textarea name="newInstruction" rows="2" cols="10" placeholder="Add instruction"></textarea>
+                <textarea name="newInstruction" rows="2" cols="10" placeholder="Add instruction"></textarea>
+                <textarea name="newInstruction" rows="2" cols="10" placeholder="Add instruction"></textarea>
+            </div>
+            <div id="addInstruction">Add one more</div>
+            <!-- Add more instructions button functionality -->
+            <script>
+                const addInstructionBtn = document.getElementById("addInstruction");
+                const instructionsList = document.getElementById("instructionsList");
+                addInstructionBtn.addEventListener('click', function(){
+                    const newInstruction = document.createElement("textarea");
+                    newInstruction.setAttribute('name', "newInstruction");
+                    newInstruction.setAttribute('rows', "2");
+                    newInstruction.setAttribute('cols', "10");
+                    newInstruction.setAttribute('placeholder', "Add instruction");
+                    instructionsList.appendChild(newInstruction);
+                });
+            </script>
+        </div>
+        <button class="sendRecipeBtn" type="submit">Add the recipe</button>
+        </form>
+    </section>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,39 @@
+<%- include("partials/header") -%>
+
+    <section class="hero-uploaded-recipe">
+        <h2>Your recipe has been successfully uploaded into the Recipe Book!</h2>
+       
+        <p>Check out how it looks:</p>
+    
+        <div class="uploaded-recipe-container">
+            <a href="/recipes/<%= id %>" class="recipe">
+                <img src="<%= recipeURL %>" alt="food" class="recipe-img">
+                <h5> <%= recipeName %> </h5>
+                <p>Prep time: <%= prepTime %> | Cook time: <%= cookTime%></p>
+            </a>
+        </div>
+    
+        <p>Or check other recipes:</p>  
+        <div class="recipes-list">
+            <a href="/recipes/<%=recipes[randomRecipes[0]]._id%>" class="recipe">
+                <img src="<%= recipes[randomRecipes[0]].imageURL %>" alt="food" class="recipe-img">
+                <h5><%= recipes[randomRecipes[0]].name %></h5>
+                <p>Prep time: <%= recipes[randomRecipes[0]].prepTime %> | Cook time: <%= recipes[randomRecipes[0]].cookTime%></p>
+            </a>
+            <a href="/recipes/<%=recipes[randomRecipes[1]]._id%>" class="recipe">
+                <img src="<%= recipes[randomRecipes[1]].imageURL %>" alt="food" class="recipe-img">
+                <h5><%= recipes[randomRecipes[1]].name %></h5>
+                <p>Prep time: <%= recipes[randomRecipes[1]].prepTime %> | Cook time: <%= recipes[randomRecipes[1]].cookTime%></p>
+            </a>
+            <a href="/recipes/<%=recipes[randomRecipes[2]]._id%>" class="recipe">
+                <img src="<%= recipes[randomRecipes[2]].imageURL %>" alt="food" class="recipe-img">
+                <h5><%= recipes[randomRecipes[2]].name %></h5>
+                <p>Prep time: <%= recipes[randomRecipes[2]].prepTime %> | Cook time: <%= recipes[randomRecipes[2]].cookTime%></p>
+            </a>
+        </div>
+    </section>
+    
+
+
+
+<%- include("partials/footer") -%>

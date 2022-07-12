@@ -1,0 +1,14 @@
+<%- include("partials/header") -%>
+
+<div class="recipes-random">
+    <% recipes.forEach(function(recipe) { %>
+        <a href="/recipes/<%=recipe._id%>" class="recipe">
+            <img src="<%= recipe.imageURL %>" alt="food" class="recipe-img">
+            <h5><%= recipe.name %></h5>
+            <p>Prep time: <%= recipe.prepTime %> | Cook time: <%= recipe.cookTime%></p>
+        </a>
+    <% });%>
+</div>
+
+
+<%- include("partials/footer") -%>

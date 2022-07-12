@@ -1,0 +1,11 @@
+<%- include("partials/header") -%>
+
+<div class="tagsPage">
+
+    <% for (const [key, value] of Object.entries(tagsList)) { %>
+        <a href="/tags/<%= key %>" > <%= (`${key}: ${value}`)  %> </a>
+        <%   } %>
+</div>
+
+
+<%- include("partials/footer") -%>

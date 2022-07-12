@@ -1,0 +1,59 @@
+<%- include("partials/header") -%>
+
+<div class="recipe-page page">
+    <div class="single-recipe-container">
+        <div class="recipe-hero">
+            <h2> <%= recipeName %> </h2>
+            <p class="recipe-desc"> <%= recipeDescription %></p>
+            <div class="tags-container-recipe">
+                <h5>Tags:</h5>
+                <% for(i=0; i< tags.length; i++){ %>
+                    <a class="single-tag" href="/tags/<%= tags[i] %>"><%= tags[i] %></a>
+                <% }%>
+            </div>
+            <div class="prep-time">
+                <div>
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <h5>Preparation time</h5>
+                    <p><%= prepTime %> minutes</p>
+                </div>
+                <div>
+                    <i class="fa-regular fa-clock"></i>
+                    <h5>Cooking time</h5>
+                    <p><%= cookTime%> minutes</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-user-group"></i>
+                    <h5>Servings</h5>
+                    <p><%= noOfServings %></p>
+                </div>
+            </div>   
+        </div>
+        <img src="<%= recipeURL %>" alt="<%= recipeName %> photo">
+    </div>
+    <div class="instructions-container">
+        <div class="instructions">
+            <% for(var i=0; i < instructions.length; i++){ %>
+                <header>
+                    <h3>Step <%= i + 1 %></h3>
+                    <div></div>
+                </header>
+                <p><%= instructions[i] %></p>
+                
+            <% } %>
+        </div>
+        <div class="ingredients">
+            <h4>Ingredients</h4>
+            <% for(var i=0; i < ingredients.length; i++) { %>
+                <ul>
+                    <li> <%= ingredients[i] %> </li>
+                </ul>
+            <% } %>
+
+        </div>
+    </div>
+    
+
+</div>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,36 @@
+<%- include("partials/header") -%>
+
+
+<section class="about">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>Where the idea came from?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Check out some recipes...</h3>
+    <!-- Recipes list -->
+    <div class="recipes-list">
+        <a href="/recipes/<%=recipes[randomRecipes[0]]._id%>" class="recipe">
+            <img src="<%= recipes[randomRecipes[0]].imageURL %>" alt="food" class="recipe-img">
+            <h5><%= recipes[randomRecipes[0]].name %></h5>
+            <p>Prep time: <%= recipes[randomRecipes[0]].prepTime %> | Cook time: <%= recipes[randomRecipes[0]].cookTime%></p>
+        </a>
+        <a href="/recipes/<%=recipes[randomRecipes[1]]._id%>" class="recipe">
+            <img src="<%= recipes[randomRecipes[1]].imageURL %>" alt="food" class="recipe-img">
+            <h5><%= recipes[randomRecipes[1]].name %></h5>
+            <p>Prep time: <%= recipes[randomRecipes[1]].prepTime %> | Cook time: <%= recipes[randomRecipes[1]].cookTime%></p>
+        </a>
+        <a href="/recipes/<%=recipes[randomRecipes[2]]._id%>" class="recipe">
+            <img src="<%= recipes[randomRecipes[2]].imageURL %>" alt="food" class="recipe-img">
+            <h5><%= recipes[randomRecipes[2]].name %></h5>
+            <p>Prep time: <%= recipes[randomRecipes[2]].prepTime %> | Cook time: <%= recipes[randomRecipes[2]].cookTime%></p>
+        </a>
+    </div>
+</section>
+
+
+<%- include("partials/footer") -%>
