@@ -1,5 +1,5 @@
 # YourRecipes
-* Project made in order to practise creating web application & database connections. 
+Project made in order to practise creating web application & database connections. 
 
 ## Table of Contents
 * General info
